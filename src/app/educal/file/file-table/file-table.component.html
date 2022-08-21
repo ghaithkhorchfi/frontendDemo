@@ -1,0 +1,48 @@
+<app-header-one></app-header-one>
+<section class="cart-area pt-100 pb-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form action="#">
+          <div class="table-content table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="product-thumbnail">title</th>
+                  <th class="cart-product-name">description</th>
+                  <th class="product-price">date Of Creation</th>
+                  <th class="product-name">Action</th>
+                </tr>
+              </thead>
+              <tbody class="border-0">
+                <tr *ngFor="let file of files">
+                  <td class="product-thumbnail">
+                    {{ file.name }}
+                  </td>
+                  <td class="product-price">
+                    <span class="amount">{{ file.description }}</span>
+                  </td>
+                  <td class="product-price">
+                    <span class="amount">{{ file.dateOfCreation }}</span>
+                  </td>
+                  <td class="product-subtotal">
+                    <button class="btn btn-primary m-1" (click)="goto(file.id)">
+                      edit
+                    </button>
+                    <button
+                      class="btn btn-danger m-1"
+                      (click)="delete(file.id)"
+                    >
+                      delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

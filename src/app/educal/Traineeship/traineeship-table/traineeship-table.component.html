@@ -1,0 +1,79 @@
+<app-header-one></app-header-one>
+<section class="cart-area pt-100 pb-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form action="#">
+          <div class="table-content table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="product-thumbnail">title</th>
+                  <th class="cart-product-name">description</th>
+                  <th class="product-price">level</th>
+                  <th class="product-quantity">state</th>
+                  <th class="product-quantity">total of hours</th>
+                  <th class="product-name">start date</th>
+                  <th class="product-name">final date</th>
+                  <th class="product-name">start Time</th>
+                  <th class="product-name">meeting Hour</th>
+                  <th class="product-name">Price</th>
+                  <th class="product-name">Action</th>
+                </tr>
+              </thead>
+              <tbody class="border-0">
+                <tr *ngFor="let traineeship of traineeships">
+                  <td class="product-thumbnail">
+                    {{ traineeship.title }}
+                  </td>
+                  <td class="product-price">
+                    <span class="amount">{{ traineeship.description }}</span>
+                  </td>
+                  <td class="product-price">
+                    <span class="amount">{{ traineeship.level }}</span>
+                  </td>
+                  <td class="product-quantity">
+                    <span class="amount">{{ traineeship.state }}</span>
+                  </td>
+                  <td class="product">
+                    <span class="amount">{{ traineeship.totalOfHours }}</span>
+                  </td>
+                  <td class="product">
+                    <span class="amount">{{ traineeship.startDate }}</span>
+                  </td>
+                  <td class="product">
+                    <span class="amount">{{ traineeship.finalDate }}</span>
+                  </td>
+                  <td class="product-subtotal">
+                    <span class="amount">{{ traineeship.startTime }}</span>
+                  </td>
+                  <td class="product-subtotal">
+                    <span class="amount">{{ traineeship.meetingHour }}</span>
+                  </td>
+                  <td class="product">
+                    <span class="amount">{{ traineeship.price }}</span>
+                  </td>
+                  <td class="product-subtotal">
+                    <button
+                      class="btn btn-primary m-1"
+                      (click)="goto(traineeship.id)"
+                    >
+                      edit
+                    </button>
+                    <button
+                      class="btn btn-danger m-1"
+                      (click)="delete(traineeship.id)"
+                    >
+                      delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
