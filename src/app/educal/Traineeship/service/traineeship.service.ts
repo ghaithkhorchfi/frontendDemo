@@ -26,6 +26,10 @@ export class TraineeshipService {
   abonner(traineeship:any,id:any){
     return this.httpClient.put(`${this.traineeshipUrl}/abon/${id}`,traineeship)
   }
+  upload(file:any){
+    return this.httpClient.post('http://localhost:8090/api/upload',file)
+
+  }
 
 
 }

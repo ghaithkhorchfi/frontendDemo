@@ -135,6 +135,26 @@
                   />
                 </div>
               </div>
+              <div class="sign__input-wrapper mb-25">
+                <h5>File</h5>
+                <button
+                  type="button"
+                  (click)="filePicker.click()"
+                  class="btn btn success"
+                >
+                  Sélectionner image
+                </button>
+                <div class="sign__input">
+                  <input
+                    type="file"
+                    name="file"
+                    style="visibility: hidden"
+                    #filePicker
+                    (change)="onImageSelected($event)"
+                  />
+                  <img [src]="imagePreview" *ngIf="imagePreview" />
+                </div>
+              </div>
               <button class="e-btn w-100"><span></span> {{ title }}</button>
             </form>
           </div>

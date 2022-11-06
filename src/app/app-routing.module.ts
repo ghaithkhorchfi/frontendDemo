@@ -25,6 +25,8 @@ import { TraineeshipTableComponent } from './educal/Traineeship/traineeship-tabl
 import { FileTableComponent } from './educal/file/file-table/file-table.component';
 import { AddFileComponent } from './educal/file/add-file/add-file.component';
 import { TraineeshipsPageComponent } from './educal/Traineeship/traineeships-page/traineeships-page.component';
+import { AdminGuard } from './educal/guard/admin.guard';
+import { FormerGuard } from './educal/guard/former.guard';
 
 
 
@@ -42,7 +44,7 @@ const routes: Routes = [
 component: AddTraineeshipComponent
 },
 {path: 'traineeships',
-component: TraineeshipTableComponent
+component: TraineeshipTableComponent, canActivate:[AdminGuard]
 },
 {path: 'traineeshipsPage',
 component: TraineeshipsPageComponent
